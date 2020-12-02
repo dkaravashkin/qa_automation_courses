@@ -1,4 +1,4 @@
-public class MyFirstProgram {
+public class LessonOne {
     public static void main(String[] args) {
         int x = 5, y = 5;
         final int z = 5;
@@ -23,5 +23,6 @@ public class MyFirstProgram {
         // 0 to 65535
         char chr = 'p';
 
+        System.out.println("test");
     }
 }
