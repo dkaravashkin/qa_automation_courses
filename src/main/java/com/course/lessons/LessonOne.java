@@ -1,3 +1,5 @@
+package com.course.lessons;
+
 public class LessonOne {
     public static void main(String[] args) {
         int x = 5, y = 5;

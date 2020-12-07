@@ -1,3 +1,5 @@
+package com.course.lessons;
+
 public class LessonTwo {
     public static void main(String[] args) {
         int a = 20;
@@ -16,7 +18,6 @@ public class LessonTwo {
 
         String text3 = new String("hello");
         String text4 = new String("hello");
-
 
         boolean bool = a == b;
         boolean bool2 = a != b;
