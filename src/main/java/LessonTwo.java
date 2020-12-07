@@ -44,7 +44,7 @@ public class LessonTwo {
             System.out.println("Hello Worlds " + a);
         }
 
-        switch(a){
+        switch (a) {
             case 5:
                 System.out.println("first case");
                 a++;
@@ -58,6 +58,12 @@ public class LessonTwo {
             default:
                 System.out.println("default");
         }
-
+        int z = a > b ? 10 : 5;
+        
+        if (a > b) {
+            z = 10;
+        } else {
+            z = 5;
+        }
     }
 }
