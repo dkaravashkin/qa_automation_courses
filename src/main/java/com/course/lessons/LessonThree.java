@@ -6,7 +6,7 @@ import com.course.other.Dog;
 public class LessonThree {
     Dog dogJack = new Dog("Jack");
     Dog dogMax = new Dog("Max");
-    Cat cat = new Cat();
+    Cat cat = new Cat("Max");
 
     public static void message(String message) {
         System.out.println("Hello World");
@@ -37,6 +37,13 @@ public class LessonThree {
         // 1 , 2 , 3 , 4 , 5
         // 0 , 1 , 2 , 3 , 4
         int[] intArray = new int[5];
+
+
+
+
+
+
+
         intArray[0] = 1;
         intArray[1] = 10;
         intArray[2] = 100;
@@ -69,5 +76,6 @@ public class LessonThree {
 
         message("Hello World");
         System.out.println(message2("Hello"));
+
     }
 }
