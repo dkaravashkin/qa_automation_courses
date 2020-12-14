@@ -1,5 +1,7 @@
 package com.course.other;
 
+import com.course.other.interfaces.Action;
+
 public class Cat extends Animal implements Action {
     private String name;
 

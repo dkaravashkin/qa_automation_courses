@@ -1,5 +1,7 @@
 package com.course.other;
 
+import com.course.other.interfaces.Action;
+
 public class Dog extends Animal implements Action {
 
     // public , package-private , private, protected
