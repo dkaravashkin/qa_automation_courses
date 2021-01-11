@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="BasicSuite" verbose="1">
+    <test name="Nopackage">
+        <classes>
+            <parameter name="first-name" value="Michael">
+                <class name="com.course.lessons.nine.MvnTests" />
+            </parameter>
+        </classes>
+    </test>
+</suite>
