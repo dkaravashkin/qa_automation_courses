@@ -1,23 +1,35 @@
-package com.course.lessons.eight;
+package com.course.lessons.ten;
 
 import com.course.pageobjects.LinkedinLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-public abstract class BaseTest {
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+abstract class BaseTest {
     private WebDriver driver;
     protected LinkedinLoginPage linkedinLoginPage;
-    private String browser = "chrome";
 
-    @BeforeTest
+    @BeforeSuite
     public void setupTest() throws Exception {
-        switch (browser.toLowerCase()) {
+        Properties props = new Properties();
+        props.load(new FileInputStream("C:\\repos\\qa_automation_courses\\src\\main\\resources\\" + System.getProperty("ENV") + ".properties"));
+
+        switch (props.getProperty("browser")) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
@@ -31,7 +43,7 @@ public abstract class BaseTest {
                 driver = new InternetExplorerDriver();
                 break;
             default:
-                throw new Exception("Browser " + browser + " is not supported");
+                throw new Exception("Browser " + props.getProperty("browser") + " is not supported");
         }
         linkedinLoginPage = new LinkedinLoginPage(driver);
 
@@ -39,6 +51,7 @@ public abstract class BaseTest {
 
     @AfterTest
     public void teardown() {
+        Allure.addAttachment("My screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         if (driver != null) {
             driver.quit();
         }

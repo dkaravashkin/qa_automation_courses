@@ -1,5 +1,6 @@
 package com.course.pageobjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +35,7 @@ public class LinkedinLoginPage extends BasePage {
         signinBtn.click();
     }
 
+    @Step("Login as {email} / {password}")
     public void login(String email, String password) {
         setEmail(email);
         setPassword(password);
@@ -41,6 +43,7 @@ public class LinkedinLoginPage extends BasePage {
     }
 
     @Override
+    @Step("Opening page")
     public void getPage() {
         driver.get("https://www.linkedin.com/");
     }
