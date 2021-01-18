@@ -1,5 +1,7 @@
 package com.course.lessons.ten;
 
+import com.course.lessons.BaseTest;
+import com.course.pageobjects.LinkedinSignInPage;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
@@ -41,8 +43,9 @@ public class TestLessonTen extends BaseTest {
     @Description("Linkedin test")
     @Issue("JRASERVER-3374")
     public void linkedinTest() {
-        linkedinLoginPage.getPage();
-        linkedinLoginPage.login("Test", "Test");
+        linkedinHomePage.getPage();
+        LinkedinSignInPage linkedinSignInPage = linkedinHomePage.clickSignIn();
+        linkedinSignInPage.signIn(userName, password);
     }
 
     @Test

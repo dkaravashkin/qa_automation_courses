@@ -1,6 +1,7 @@
-package com.course.lessons.ten;
+package com.course.lessons;
 
-import com.course.pageobjects.LinkedinLoginPage;
+import com.course.pageobjects.LinkedinHomePage;
+import com.course.pageobjects.LinkedinSignInPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
@@ -9,25 +10,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Properties;
 
-abstract class BaseTest {
+public abstract class BaseTest {
     private WebDriver driver;
-    protected LinkedinLoginPage linkedinLoginPage;
+    protected LinkedinHomePage linkedinHomePage;
+    protected Properties props;
+    protected String userName;
+    protected String password;
+
 
     @BeforeSuite
     public void setupTest() throws Exception {
-        Properties props = new Properties();
-        props.load(new FileInputStream("C:\\repos\\qa_automation_courses\\src\\main\\resources\\" + System.getProperty("ENV") + ".properties"));
+        props = new Properties();
+        props.load(new FileInputStream("C:\\repos\\qa_automation_courses\\src\\main\\resources\\dev.properties"));
 
         switch (props.getProperty("browser")) {
             case "chrome":
@@ -45,8 +46,9 @@ abstract class BaseTest {
             default:
                 throw new Exception("Browser " + props.getProperty("browser") + " is not supported");
         }
-        linkedinLoginPage = new LinkedinLoginPage(driver);
-
+        linkedinHomePage = new LinkedinHomePage(driver);
+        userName = props.getProperty("userName");
+        password = props.getProperty("password");
     }
 
     @AfterTest
