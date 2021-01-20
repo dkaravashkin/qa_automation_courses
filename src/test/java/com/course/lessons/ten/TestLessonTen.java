@@ -1,7 +1,7 @@
 package com.course.lessons.ten;
 
 import com.course.lessons.BaseTest;
-import com.course.pageobjects.LinkedinSignInPage;
+import com.course.pageobjects.linkedin.LinkedinSignInPage;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;

@@ -1,13 +1,14 @@
 package com.course.lessons;
 
-import com.course.pageobjects.LinkedinHomePage;
-import com.course.pageobjects.LinkedinSignInPage;
+import com.course.pageobjects.linkedin.LinkedinHomePage;
+import com.course.pageobjects.rozetka.pages.RozetkaHomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterTest;
@@ -20,10 +21,10 @@ import java.util.Properties;
 public abstract class BaseTest {
     private WebDriver driver;
     protected LinkedinHomePage linkedinHomePage;
+    protected RozetkaHomePage rozetkaHomePage;
     protected Properties props;
     protected String userName;
     protected String password;
-
 
     @BeforeSuite
     public void setupTest() throws Exception {
@@ -46,7 +47,9 @@ public abstract class BaseTest {
             default:
                 throw new Exception("Browser " + props.getProperty("browser") + " is not supported");
         }
+        driver.manage().window().maximize();
         linkedinHomePage = new LinkedinHomePage(driver);
+        rozetkaHomePage = new RozetkaHomePage(driver);
         userName = props.getProperty("userName");
         password = props.getProperty("password");
     }

@@ -1,9 +1,8 @@
 package com.course.lessons.ui;
 
 import com.course.lessons.BaseTest;
-import com.course.pageobjects.LinkedinMainPage;
-import com.course.pageobjects.LinkedinSignInPage;
-import org.testng.Assert;
+import com.course.pageobjects.linkedin.LinkedinMainPage;
+import com.course.pageobjects.linkedin.LinkedinSignInPage;
 import org.testng.annotations.Test;
 
 public class LinkedinTest extends BaseTest {
