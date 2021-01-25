@@ -1,6 +1,6 @@
 package com.course.pageobjects.linkedin;
 
-import com.course.pageobjects.BasePage;
+import com.course.pageobjects.rozetka.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

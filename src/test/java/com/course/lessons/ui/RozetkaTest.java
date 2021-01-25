@@ -1,7 +1,9 @@
 package com.course.lessons.ui;
 
 import com.course.lessons.BaseTest;
+import com.course.pageobjects.rozetka.pages.CheckoutPage;
 import com.course.pageobjects.rozetka.pages.RozetkaNotebooksPage;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -21,5 +23,7 @@ public class RozetkaTest extends BaseTest {
         rozetkaNotebooksPage.filterProducts();
         rozetkaNotebooksPage.selectMacBook();
         rozetkaNotebooksPage.productComponent.buyProduct();
+        CheckoutPage checkoutPage = rozetkaNotebooksPage.basketComponent.clickSubmitButton();
+        Assert.assertEquals("Оформлення замовлення", checkoutPage.getCheckoutHeading());
     }
 }

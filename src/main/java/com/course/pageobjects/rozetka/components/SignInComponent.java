@@ -1,7 +1,5 @@
 package com.course.pageobjects.rozetka.components;
 
-import com.course.pageobjects.BaseComponent;
-import com.course.pageobjects.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

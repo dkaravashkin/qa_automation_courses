@@ -1,6 +1,5 @@
 package com.course.pageobjects.rozetka.components;
 
-import com.course.pageobjects.BaseComponent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +18,7 @@ public class ProductComponent extends BaseComponent {
     }
 
     public void buyProduct() {
-        waitUntilElementVisible(buyBtn, 10);
+        waitUtils.waitUntilElementVisible(buyBtn, 10);
         buyBtn.click();
     }
 }

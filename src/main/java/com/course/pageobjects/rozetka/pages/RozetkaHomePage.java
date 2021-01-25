@@ -1,6 +1,5 @@
 package com.course.pageobjects.rozetka.pages;
 
-import com.course.pageobjects.BasePage;
 import com.course.pageobjects.rozetka.components.BasketComponent;
 import com.course.pageobjects.rozetka.components.SignInComponent;
 import org.openqa.selenium.WebDriver;
@@ -37,15 +36,15 @@ public class RozetkaHomePage extends BasePage {
     }
 
     public void pressLogin() {
-        waitUntilElementClickable(signIn, 10);
+        waitUtils.waitUntilElementClickable(signIn, 10);
         signIn.click();
     }
 
     public RozetkaNotebooksPage openNotebooksCategory() {
-        waitUntilElementClickable(notebooksCategory, 10);
+        waitUtils.waitUntilElementClickable(notebooksCategory, 10);
         Actions actions = new Actions(driver);
         actions.moveToElement(notebooksCategory).build().perform();
-        waitUntilElementClickable(hidenNotebooksCategory, 10);
+        waitUtils.waitUntilElementClickable(hidenNotebooksCategory, 10);
         hidenNotebooksCategory.click();
         return new RozetkaNotebooksPage(driver);
     }

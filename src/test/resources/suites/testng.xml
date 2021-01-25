@@ -1,9 +1,9 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="UITest" verbose="1">
-    <test name="LinkedinTest">
+    <test name="TestLogger">
         <classes>
-                <class name="com.course.lessons.ten.TestLessonTen" />
+                <class name="com.course.lessons.ui.RozetkaTest"/>
         </classes>
     </test>
 </suite>

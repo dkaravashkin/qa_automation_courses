@@ -1,4 +1,4 @@
-package com.course.pageobjects;
+package com.course.utils;
 
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -6,14 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class BasePage {
+public class WaitUtils {
     private WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    public WaitUtils(WebDriver driver) {
         this.driver = driver;
     }
-
-    protected abstract void getPage();
 
     public WebElement waitUntilElementVisible(WebElement element, int timeOutInSec) {
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSec);

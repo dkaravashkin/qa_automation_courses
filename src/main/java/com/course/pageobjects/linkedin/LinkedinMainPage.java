@@ -1,6 +1,6 @@
 package com.course.pageobjects.linkedin;
 
-import com.course.pageobjects.BasePage;
+import com.course.pageobjects.rozetka.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,11 +18,11 @@ public class LinkedinMainPage extends BasePage {
     }
 
     public boolean isMessagingPresent() {
-        return isElementPresent(messaging, 15);
+        return waitUtils.isElementPresent(messaging, 15);
     }
 
     public void assertMessagingIsPresent() {
-        assertElementIsVisible(messaging, 0, "Messaging was not found");
+        waitUtils.assertElementIsVisible(messaging, 0, "Messaging was not found");
     }
 
     @Override

@@ -1,17 +1,15 @@
 package com.course.pageobjects.rozetka.pages;
 
-import com.course.pageobjects.BasePage;
 import com.course.pageobjects.rozetka.components.BasketComponent;
 import com.course.pageobjects.rozetka.components.ProductComponent;
-import com.course.pageobjects.rozetka.components.SignInComponent;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RozetkaNotebooksPage extends BasePage {
     public ProductComponent productComponent;
+    public BasketComponent basketComponent;
 
     @FindBy(xpath = "//*[@class='checkbox-filter__link' and @href='/ua/notebooks/c80004/producer=apple/']")
     private WebElement filter;
@@ -25,6 +23,7 @@ public class RozetkaNotebooksPage extends BasePage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
         productComponent = new ProductComponent(driver);
+        basketComponent = new BasketComponent(driver);
     }
 
     @Override
@@ -33,12 +32,12 @@ public class RozetkaNotebooksPage extends BasePage {
     }
 
     public void filterProducts() {
-        waitUntilElementVisible(filter, 10);
+        waitUtils.waitUntilElementVisible(filter, 10);
         filter.click();
     }
 
     public void selectMacBook() {
-        waitUntilElementClickable(appleMacBook, 10);
+        waitUtils.waitUntilElementClickable(appleMacBook, 10);
         appleMacBook.click();
     }
 }
