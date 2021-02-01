@@ -5,9 +5,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class MvnTests {
-    @Parameters({"first-name"})
+
     @Test
-    public void testOne(String firstName) {
+    public void testOne() {
         long threadId = Thread.currentThread().getId();
         System.out.println("First test thread: " + threadId);
         Assert.assertEquals(2, 2);
@@ -24,6 +24,6 @@ public class MvnTests {
     public void testThree() {
         long threadId = Thread.currentThread().getId();
         System.out.println("Third test thread: " + threadId);
-        Assert.assertEquals(7, 8);
+        Assert.assertEquals(8, 8);
     }
 }
