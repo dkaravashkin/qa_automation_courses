@@ -24,6 +24,6 @@ public class MvnTests {
     public void testThree() {
         long threadId = Thread.currentThread().getId();
         System.out.println("Third test thread: " + threadId);
-        Assert.assertEquals(8, 8);
+        Assert.assertEquals(9, 8);
     }
 }
