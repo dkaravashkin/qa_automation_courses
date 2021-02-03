@@ -3,7 +3,7 @@
 <suite name="Test" verbose="1">
     <test name="Some test">
         <classes>
-                <class name="com.course.lessons.nine.MvnTests"/>
+                <class name="com.course.lessons.ui.RozetkaTest"/>
         </classes>
     </test>
 </suite>

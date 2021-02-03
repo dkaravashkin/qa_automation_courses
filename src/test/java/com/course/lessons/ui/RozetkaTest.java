@@ -16,7 +16,7 @@ public class RozetkaTest extends BaseTest {
         rozetkaHomePage.signInComponent.login(userName, password);
     }
 
-    @Test
+/*    @Test
     public void buySmth() throws InterruptedException {
         rozetkaHomePage.getPage();
         RozetkaNotebooksPage rozetkaNotebooksPage = rozetkaHomePage.openNotebooksCategory();
@@ -25,5 +25,5 @@ public class RozetkaTest extends BaseTest {
         rozetkaNotebooksPage.productComponent.buyProduct();
         CheckoutPage checkoutPage = rozetkaNotebooksPage.basketComponent.clickSubmitButton();
         Assert.assertEquals("Оформлення замовлення", checkoutPage.getCheckoutHeading());
-    }
+    }*/
 }
