@@ -13,7 +13,7 @@ pipeline {
         stage('running tests'){
             steps {
                 sh 'chmod +x mvnw'
-                sh './mvnw clean test'
+                sh 'xvfb-run -a ./mvnw clean test'
             }
         }
     }
