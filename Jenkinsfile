@@ -1,5 +1,12 @@
 pipeline {
 
+    parameters {
+        choice(name: 'ENVIRONMENT',
+               choices: ['dev', 'stage'],
+               description: 'Environment variables'
+        )
+    }
+
     agent { label 'gcp_linux' }
 
     stages {
