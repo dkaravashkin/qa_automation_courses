@@ -31,7 +31,10 @@ pipeline {
 
     post {
         always {
-            echo 'I will always say Hello again!'
+            allure([
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'target/allure-results']]
+            ])
         }
     }
 }
