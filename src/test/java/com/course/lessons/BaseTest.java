@@ -20,6 +20,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
 import java.util.Properties;
@@ -38,7 +39,8 @@ public abstract class BaseTest {
         logger.info("Starting setup tests........");
         logger.info("Setup properties");
         props = new Properties();
-        props.load(new FileInputStream("C:\\repos\\qa_automation_courses\\src\\main\\resources\\properties\\dev.properties"));
+        File propsFile = new File("src/main/resources/properties/dev.properties");
+        props.load(new FileInputStream(propsFile));
 
         logger.info("Setup driver");
         switch (props.getProperty("browser")) {
