@@ -39,7 +39,7 @@ public abstract class BaseTest {
         logger.info("Starting setup tests........");
         logger.info("Setup properties");
         props = new Properties();
-        File propsFile = new File("src/main/resources/properties/dev.properties");
+        File propsFile = new File("src/main/resources/properties/" + System.getProperty("ENV") + ".properties");
         props.load(new FileInputStream(propsFile));
 
         logger.info("Setup driver");

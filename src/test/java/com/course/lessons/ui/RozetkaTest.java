@@ -14,6 +14,7 @@ public class RozetkaTest extends BaseTest {
         rozetkaHomePage.getPage();
         rozetkaHomePage.pressLogin();
         rozetkaHomePage.signInComponent.login(userName, password);
+        System.out.println("User Name: " + userName + " " + "Password: " + password);
     }
 
 /*    @Test
