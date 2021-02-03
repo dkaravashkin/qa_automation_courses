@@ -5,6 +5,10 @@ pipeline {
                choices: ['dev', 'stage'],
                description: 'Environment variables'
         )
+        string(name: 'GIT_BRANCH',
+               defaultValue: 'main',
+               description: 'Git branch to checkout'
+        )
     }
 
     agent { label 'gcp_linux' }
@@ -12,7 +16,7 @@ pipeline {
     stages {
         stage('checkout'){
             steps {
-                git branch: 'main',
+                git branch: "${params.GIT_BRANCH}",
                 credentialsId: 'scm-creds',
                 url: 'https://github.com/dkaravashkin/qa_automation_courses.git'
             }
