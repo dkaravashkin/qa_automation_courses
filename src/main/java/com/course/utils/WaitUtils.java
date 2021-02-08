@@ -1,5 +1,6 @@
 package com.course.utils;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,11 @@ public class WaitUtils {
 
     public WaitUtils(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void waitUntilPageIsLoaded(int timeOutInSec){
+        new WebDriverWait(driver, timeOutInSec).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
     public WebElement waitUntilElementVisible(WebElement element, int timeOutInSec) {
